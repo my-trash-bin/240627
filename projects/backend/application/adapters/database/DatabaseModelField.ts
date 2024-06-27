@@ -1,6 +1,4 @@
-export type DatabaseModelField<N extends string, M extends string, T> = {
-  name: N;
-} & (T extends string
+export type DatabaseModelField<T> = T extends string
   ? { type: "string" }
   : T extends number
   ? { type: "int" | "float" }
@@ -12,4 +10,4 @@ export type DatabaseModelField<N extends string, M extends string, T> = {
       type: "custom";
       serialize: (value: T) => string;
       deserialize: (value: string) => T;
-    });
+    };

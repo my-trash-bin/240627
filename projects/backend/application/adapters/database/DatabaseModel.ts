@@ -1,8 +1,14 @@
 import { DatabaseModelField } from "./DatabaseModelField";
+import { ExtractRelationFields } from "./ExtractRelationFields";
 
-export interface DatabaseModel<N extends string, T> {
+export interface DatabaseModel<T, N extends string, M> {
   fields: {
-    [K in Extract<keyof T, string>]: DatabaseModelField<N, K, T[K]>;
+    [K in ExtractPrimitiveFields<T, M>]: DatabaseModelField<M[K]>;
+  };
+  relation: {
+    [K in ExtractRelationFields<T, M>]: {
+      //
+    };
   };
   map?: string;
 }
