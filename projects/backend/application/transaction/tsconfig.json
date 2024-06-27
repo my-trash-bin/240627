@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    // vscode
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // project
+    "incremental": true,
+    "declaration": true,
+    "skipLibCheck": true,
+
+    // strict
+    // TODO:
+
+    // package
+    "target": "ES6",
+    "moduleResolution": "Node",
+  },
+}
