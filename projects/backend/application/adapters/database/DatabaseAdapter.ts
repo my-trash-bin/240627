@@ -1,4 +1,4 @@
-import { DatabaseSchema } from "./DatabaseSchema";
+import { DatabaseSchema } from "./DatabaseModels";
 
 export interface DatabaseAdapter<
   T,
