@@ -13,6 +13,4 @@ export type DatabaseModelField<T, V extends boolean> = (T extends string
     }) &
   (V extends true
     ? { readonly optional: true }
-    : { readonly optional?: false }) & {
-    defaultIncluded: boolean;
-  };
+    : { readonly optional?: false });

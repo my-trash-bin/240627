@@ -1,4 +1,5 @@
 import { DatabaseModels } from "../DatabaseModels";
+import { DatabaseRelations } from "../DatabaseRelations";
 
 export interface User {
   id: string;
@@ -52,31 +53,31 @@ export interface TestModels {
 
 export const testModels = {
   User: {
-    id: { type: "uuid", defaultIncluded: true },
-    createTime: { type: "dateTime", defaultIncluded: true },
-    updateTime: { type: "dateTime", defaultIncluded: true },
-    name: { type: "string", optional: true, defaultIncluded: true },
+    id: { type: "uuid" },
+    createTime: { type: "dateTime" },
+    updateTime: { type: "dateTime" },
+    name: { type: "string", optional: true },
   },
   Post: {
-    id: { type: "uuid", defaultIncluded: true },
-    createTime: { type: "dateTime", defaultIncluded: true },
-    updateTime: { type: "dateTime", defaultIncluded: true },
-    title: { type: "string", optional: true, defaultIncluded: true },
-    content: { type: "string", defaultIncluded: true },
-    authorId: { type: "uuid", defaultIncluded: false },
+    id: { type: "uuid" },
+    createTime: { type: "dateTime" },
+    updateTime: { type: "dateTime" },
+    title: { type: "string", optional: true },
+    content: { type: "string" },
+    authorId: { type: "uuid" },
   },
   Comment: {
-    id: { type: "uuid", defaultIncluded: true },
-    createTime: { type: "dateTime", defaultIncluded: true },
-    updateTime: { type: "dateTime", defaultIncluded: true },
-    postId: { type: "uuid", defaultIncluded: false },
-    authorId: { type: "uuid", defaultIncluded: false },
-    content: { type: "string", defaultIncluded: true },
+    id: { type: "uuid" },
+    createTime: { type: "dateTime" },
+    updateTime: { type: "dateTime" },
+    postId: { type: "uuid" },
+    authorId: { type: "uuid" },
+    content: { type: "string" },
   },
   Image: {
-    id: { type: "uuid", defaultIncluded: true },
-    postId: { type: "uuid", defaultIncluded: false },
-    src: { type: "string", defaultIncluded: true },
+    id: { type: "uuid" },
+    postId: { type: "uuid" },
+    src: { type: "string" },
   },
 } as const satisfies DatabaseModels<TestModels>;
 
