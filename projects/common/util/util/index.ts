@@ -1,6 +1,8 @@
 export { And } from "./types/And";
 export { Awaitable } from "./types/Awaitable";
 export { ExpandRecursively } from "./types/ExpandRecursively";
+export { IsOptionalKey } from "./types/IsOptionalKey";
+export { IsRequiredKey } from "./types/IsRequiredKey";
 export { IsSameType } from "./types/IsSameType";
 export { Or } from "./types/Or";
 export { StringUnionToString } from "./types/StringUnionToString";

@@ -1,13 +1,17 @@
-export type DatabaseModelField<T> = T extends string
-  ? { type: "string" }
+export type DatabaseModelField<T, V extends boolean> = (T extends string
+  ? { readonly type: "string" | "uuid"; readonly map?: string }
   : T extends number
-  ? { type: "int" | "float" }
+  ? { readonly type: "int" | "float"; readonly map?: string }
   : T extends boolean
-  ? { type: "boolean" }
+  ? { readonly type: "boolean"; readonly map?: string }
   : T extends Date
-  ? { type: "dateTime" }
+  ? { readonly type: "dateTime"; readonly map?: string }
   : {
-      type: "custom";
-      serialize: (value: T) => string;
-      deserialize: (value: string) => T;
-    };
+      readonly type: "custom";
+      readonly serialize: (value: T) => string;
+      readonly deserialize: (value: string) => T;
+      readonly map?: string;
+    }) &
+  V extends true
+  ? { readonly optional: true }
+  : { readonly optional?: false };

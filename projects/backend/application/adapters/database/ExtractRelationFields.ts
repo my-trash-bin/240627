@@ -1,9 +1,14 @@
 import { IsSameType, Or } from "@this-project/common-util-util";
-import { TestSchema, User } from "./example/TestSchema";
+
+type IsRelationFieldFor<A, M, K extends keyof M> = Or<
+  IsSameType<M[K], A>,
+  IsSameType<M[K], A[]>,
+  K
+>;
 
 type IsRelationField<T, M, K extends keyof M> = T[keyof T] extends infer A
   ? A extends any
-    ? Or<IsSameType<A, M[K]>, IsSameType<A[], M[K]>, K>
+    ? IsRelationFieldFor<A, M, K>
     : never
   : never;
 
@@ -12,9 +17,3 @@ export type ExtractRelationFields<T, M> = keyof M extends infer K
     ? IsRelationField<T, M, K>
     : never
   : never;
-
-// FIXME:
-
-type X = IsRelationField<TestSchema, User, "id">;
-
-type Test = ExtractRelationFields<TestSchema, User>;
