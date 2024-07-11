@@ -1,5 +1,5 @@
+import { DatabaseMaps } from "../DatabaseMaps";
 import { DatabaseModels } from "../DatabaseModels";
-import { DatabaseRelations } from "../DatabaseRelations";
 
 export interface User {
   id: string;
@@ -81,7 +81,7 @@ export const testModels = {
   },
 } as const satisfies DatabaseModels<TestModels>;
 
-export const testRelations = {} as const satisfies DatabaseRelations<
+export const testRelations = {} as const satisfies DatabaseMaps<
   TestModels,
   typeof testModels
 >;
