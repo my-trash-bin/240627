@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    // vscode
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // custom
+    "incremental": true,
+    "declaration": true,
+
+    // strict
+    // TODO:
+    "alwaysStrict": true,
+
+    // project
+    "lib": ["ES2017", "DOM"],
+  },
+}

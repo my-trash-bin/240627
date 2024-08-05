@@ -1,0 +1,16 @@
+{
+  "name": "@this-project/frontend-util-rest",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@this-project/common-api-rest": "file:../../../common/api/rest",
+    "@this-project/common-util-util": "file:../../../common/util/util"
+  }
+}
