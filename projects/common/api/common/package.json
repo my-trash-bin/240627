@@ -1,5 +1,5 @@
 {
-  "name": "@this-project/common-api-rest",
+  "name": "@this-project/common-api-common",
   "version": "0.1.0",
   "license": "UNLICENSED",
   "main": "index.js",
@@ -10,7 +10,6 @@
     "typescript": "^5.5.2"
   },
   "dependencies": {
-    "@this-project/common-api-common": "file:../common",
     "@this-project/common-util-util": "file:../../../common/util/util"
   }
 }
